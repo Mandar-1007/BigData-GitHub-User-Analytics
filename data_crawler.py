@@ -13,8 +13,8 @@ github_api_url = "https://api.github.com/users?since={}"
 headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
 
 # Parameters
-num_samples = 1000  # Adjust as needed
-sleep_time = 2  # Adjust based on API rate limits
+num_samples = 1000
+sleep_time = 2
 
 # Store results
 user_data_list = []

@@ -8,7 +8,7 @@ with open("github_users_sample.json", "r") as f:
 # Extract user IDs from collected data
 sampled_ids = {user["id"] for user in data}
 
-# Step 1: Define Validation Set (Strictly Follow Guidelines)
+# Step 1: Define Validation Set
 validation_range = set(range(1, 10_000))  # Small, manageable GitHub ID range
 valid_users_in_validation = sampled_ids.intersection(validation_range)
 missing_users_in_validation = validation_range - sampled_ids
@@ -20,7 +20,7 @@ missing_users = len(missing_users_in_validation)
 total_sample = valid_users + missing_users
 missing_ratio = missing_users / total_sample if total_sample > 0 else 0
 
-# Step 3: Estimate Total Valid Users in GitHub (Now Including Noise Like Boxplot)
+# Step 3: Estimate Total Valid Users in GitHub
 max_user_id = 10_000_000  # Assumed upper bound for GitHub user IDs
 estimated_valid_users = max_user_id * (1 - missing_ratio)
 
@@ -28,7 +28,7 @@ estimated_valid_users = max_user_id * (1 - missing_ratio)
 noise_factor = np.random.uniform(0.9, 1.1)
 estimated_valid_users *= noise_factor
 
-# Step 5: Compute and Print Average Estimate (Newly Added)
+# Step 5: Compute and Print Average Estimate
 num_runs = 50  # Same as in boxplot script
 estimates = [max_user_id * (1 - missing_ratio) * np.random.uniform(0.9, 1.1) for _ in range(num_runs)]
 avg_estimate = np.mean(estimates)

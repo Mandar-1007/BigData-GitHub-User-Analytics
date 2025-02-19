@@ -15,7 +15,6 @@ sample_sizes = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200]  # Sampling budget
 max_user_id = 10_000_000  # Assumed max GitHub user ID
 num_runs = 50  # Number of repeated runs per sample size
 
-
 # Function to compute estimated users for different sample sizes
 def estimate_valid_users(sample_size):
     sampled_items = np.random.choice(list(sampled_user_ids), size=sample_size, replace=False)
@@ -48,7 +47,7 @@ plt.boxplot(
     flierprops=dict(marker='o', color='red', markersize=5)
 )
 
-# Add reference line for average estimate (Now RED)
+# Add reference line for average estimate
 avg_estimate = np.mean([val for values in all_estimates.values() for val in values])
 plt.axhline(y=avg_estimate, color='red', linestyle='-', linewidth=1, label=f"Avg Estimate: {int(avg_estimate)}")
 
@@ -57,10 +56,6 @@ plt.xlabel("Sample Size (m)", labelpad=10)
 plt.ylabel("Estimated Number of Active GitHub Users")
 plt.title("Unbiasedness Proof: Boxplot of Estimated Users for Different Sampling Budgets")
 
-# Move the legend **below the x-axis, to the extreme right**
 plt.legend(loc="lower right", bbox_to_anchor=(1, -0.15), fontsize=10, frameon=False)
-
 plt.grid(True)
-
-# Show the plot
 plt.show()

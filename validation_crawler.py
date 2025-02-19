@@ -39,7 +39,7 @@ while since_id < max_id:
         print(f"Unexpected error: {response.status_code}")
         break
 
-    time.sleep(sleep_time)  # Avoid hitting API limits
+    time.sleep(sleep_time)
 
 # Save validation set to a JSON file
 with open("validation_set.json", "w") as f:

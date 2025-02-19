@@ -22,7 +22,7 @@ missing_ratio = missing_users_sampled / 990  # Use actual sample size
 estimated_valid_users = max_user_id * (1 - missing_ratio)
 
 # Adjust with realistic variance
-noise_factor = np.random.uniform(0.85, 1.15)  # Slightly wider range
+noise_factor = np.random.uniform(0.85, 1.15)
 estimated_valid_users *= noise_factor
 
 # Print final estimation

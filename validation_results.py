@@ -4,8 +4,8 @@ import json
 with open("validation_set.json", "r") as f:
     validation_data = json.load(f)
 
-# Count actual active users in the validation range
-actual_active_users = len(validation_data)  # Since each entry is an active user
+# Count actual active users in the validation range since each entry is an active user
+actual_active_users = len(validation_data)
 
 # Load sample-based estimation results
 with open("github_users_sample.json", "r") as f:
@@ -24,7 +24,6 @@ estimated_active_users = 10_000 * (1 - missing_ratio)
 error = abs(estimated_active_users - actual_active_users)
 error_percentage = (error / actual_active_users) * 100
 
-# Print comparison results
 print("Validation Results:")
 print(f"Actual Active Users in Validation Range: {actual_active_users}")
 print(f"Estimated Active Users from Sampling: {int(estimated_active_users)}")
