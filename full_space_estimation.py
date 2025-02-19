@@ -26,6 +26,6 @@ noise_factor = np.random.uniform(0.85, 1.15)
 estimated_valid_users *= noise_factor
 
 # Print final estimation
-print("Final Full GitHub ID Space Estimation Results:")
+print("Full GitHub ID Space Estimation Results:")
 print(f"Sampled Users: {valid_users_sampled}")
 print(f"Estimated Total Valid Users: {int(estimated_valid_users)}")

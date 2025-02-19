@@ -33,8 +33,6 @@ num_runs = 50  # Same as in boxplot script
 estimates = [max_user_id * (1 - missing_ratio) * np.random.uniform(0.9, 1.1) for _ in range(num_runs)]
 avg_estimate = np.mean(estimates)
 
-print(f"Before saving: {estimated_valid_users}")
-
 # Step 5: Print Results (For Reporting & Debugging)
 print("Estimation Results:")
 print(f"Validation Set Range: 1 - 10,000")
