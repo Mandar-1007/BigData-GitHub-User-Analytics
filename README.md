@@ -110,6 +110,23 @@ This script estimates the total number of valid GitHub users across the entire I
 ![image](https://github.com/user-attachments/assets/4ca3e36a-c343-4627-961c-701062109626)
 
 
+# Configuration File (config.yaml)
+
+This project uses a config.yaml file to securely store the GitHub API token required for data crawling. The GitHub API has rate limits, and authentication allows for a higher request quota.
+
+**How to Set Up config.yaml**
+1. Create a new file named config.yaml in the project directory.
+
+2. Add the following content
+    
+![image](https://github.com/user-attachments/assets/47ff2c9b-9ae8-4be9-b4ad-268cc804d6b0)
+
+4. Replace "your_github_personal_access_token_here" with your actual GitHub Personal Access Token
+
+5. Ensure config.yaml is added to .gitignore to avoid exposing sensitive credentials
+
+*Note: If no token is provided, the script will still run but may hit API rate limits quickly.*
+
 # Key Takeaways:
 
 ✔ Sampling & estimation allows us to measure GitHub’s total users efficiently.
